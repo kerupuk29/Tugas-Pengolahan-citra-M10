@@ -101,8 +101,8 @@ if uploaded_file is not None:
         min_radius = st.sidebar.slider("Min Radius", 0, 200, 0)
         max_radius = st.sidebar.slider("Max Radius", 0, 500, 0) # 0 artinya tidak terbatas
         
-        # Proses Deteksi
-        circles = cv2.HoughCircles(gray_blurred, cv2.HoughCircles, dp, min_dist,
+        # Ganti menjadi cv2.HOUGH_GRADIENT
+        circles = cv2.HoughCircles(gray_blurred, cv2.HOUGH_GRADIENT, dp, min_dist,
                                    param1=param1, param2=param2, 
                                    minRadius=min_radius, maxRadius=max_radius)
         
